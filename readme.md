@@ -1,4 +1,4 @@
-- **https://dzone.com/articles/running-apache-kafka-on-windows-os** - установка kafka + zookeeper или запустить docker-compose up
+запустить **docker-compose up** и любоваться тем, как обрабатываются сообщения
 - **start faust -a messages_producer worker -l info --web-port 6066** запуск генератора сообщений
 
 - **start faust -A preprocess worker -l info --web-port 6067** - запуск преобработчика сообщений

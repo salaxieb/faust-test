@@ -11,4 +11,4 @@ def sleep(t):
 def getResponseForText(message):
     sleep(3)
     message = str(message)
-    return 'привет, ' + message + '!'
+    return 'hello, ' + message + '!'

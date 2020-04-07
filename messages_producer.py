@@ -1,17 +1,13 @@
 import faust
 from preprocess import preprocess
 import random
-
+from broker_detection import broker
 
 app = faust.App(
     'greetings_group',
-    #broker='kafka://kafka:9093',
-    broker='kafka://localhost:9092',
-    #topic_partitions=4,
-    autodiscover=True
-)
+    broker=broker,
+    autodiscover=True)
 
-# GUI для kafka: "kafkatool"
 @app.timer(2.0)
 async def publish_greetings():
     print('sending message')
