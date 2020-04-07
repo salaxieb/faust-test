@@ -1,0 +1,8 @@
+# data files
+/greetings_group-data/
+
+#cache
+/__pycache__/
+
+#env data
+/env_faust/
