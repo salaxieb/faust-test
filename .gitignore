@@ -7,5 +7,5 @@
 #env data
 /env_faust/
 
-#wait for it script
-wait-for-it.unix.sh
+#deleteing containers util
+delete_containers.bat

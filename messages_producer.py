@@ -1,11 +1,11 @@
 import faust
 from preprocess import preprocess
 import random
-from broker_detection import broker
+from broker_detection import kafka_broker
 
 app = faust.App(
     'greetings_group',
-    broker=broker,
+    broker=kafka_broker,
     autodiscover=True)
 
 @app.timer(2.0)
