@@ -53,6 +53,7 @@ services:
       # - schema-registry
     ports:
       - "8084:80"
+      - "6066:6066"
       - "8000:8000"
     volumes:
       - ./.:/application

@@ -3,10 +3,6 @@ from cassandra.policies import DCAwareRoundRobinPolicy
 from cassandra.auth import PlainTextAuthProvider
 from broker_detection import cassandra_cluster
 
-print('%'*100)
-print(cassandra_cluster)
-print('%'*100)
-
 def create_connection():
    auth_provider = PlainTextAuthProvider(username='cassandra', password='cassandra')
    cluster = Cluster([cassandra_cluster], auth_provider=auth_provider)
@@ -31,3 +27,8 @@ def increase_and_get_number_of_greetings(session, firstname):
     # обновляем запись в базе знаний
     session.execute("UPDATE ds_greetings SET counter =%s WHERE firstname = %s", [total_greetings, firstname])
     return total_greetings
+
+def get_all_greetings_counts(session):
+    #получаем список всех приветствий
+    result = session.execute("SELECT * FROM ds_greetings").all()
+    return result
